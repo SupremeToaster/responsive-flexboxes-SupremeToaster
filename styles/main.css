@@ -225,8 +225,6 @@ footer {
 
 .hero-text {
   position: absolute;
-  /* top: 30%;
-  left: 10%; */
   z-index: 2;
   color: white;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
@@ -374,5 +372,5 @@ svg {
 }
 
 .left .image-wrapper {
-  order: 0; /* Image on the right */
+  order: -1; /* Image on the right */
 }
