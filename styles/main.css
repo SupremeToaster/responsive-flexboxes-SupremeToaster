@@ -1,0 +1,378 @@
+/*****************************************************/
+/* This semester we will be using my variation of    */
+/* Josh Comeau's CSS Reset instead of normalize      */
+/* Read more at                                      */
+/* https://www.joshwcomeau.com/css/custom-css-reset/ */
+/*****************************************************/
+/* Always add your CSS below the reset CSS           */
+/*****************************************************/
+
+:root {
+  --color-font: #333;
+  --color-primary: #205373; /* dark blue */
+  --color-secondary: #517ea6; /* light blue */
+  --color-accent: #a6653f; /* orange brown */
+  --color-accent-light: #f2bc8d; /* light tan */
+  --gutter: 1rem; /* gutter for padding around text */
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  /* this an experimental line-height; if it breaks, add line-height: 1.5 to body */
+  line-height: calc(1em + 0.5rem);
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+/* /* img, */
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+*/ input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* until you get a feel for overflow, I'll keep these next two commented out */
+/* p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+} */
+
+/* p {
+  overflow-wrap: break-word;
+  hyphens: auto;
+} */
+
+/* temp CSS for HTML only assignments */
+picture img {
+  width: 100%;
+}
+
+svg {
+  width: 200px;
+}
+
+/* temp fix to size about img */
+img[srcset] {
+  width: 50%;
+  height: auto;
+  margin: 2rem auto;
+}
+
+/* temporary fix to size svg images */
+img[src$="svg"] {
+  width: 200px;
+}
+
+body,
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Nunito", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: normal;
+  font-style: normal;
+  color: var(--color-heading);
+  font-weight: 500;
+  font-size: 1.1rem;
+  letter-spacing: 2px;
+  word-spacing: 5px;
+  line-height: 1.6em;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+  transition: background-color 300ms ease, color 300ms ease;
+  cursor: pointer;
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: stretch;
+  list-style: none;
+  padding: 0;
+  margin: 20px;
+}
+
+nav ul a {
+  display: inline-block;
+  padding: 10px 15px; /* Adjust padding as needed for larger tap targets */
+  transition: background-color 300ms ease, color 300ms ease;
+  color: var(--color-font); /* Assuming you have a color variable for text */
+  text-decoration: none;
+}
+
+nav ul a:hover {
+  background-color: var(--color-accent); /* Change as per your theme */
+  color: #fff;
+  border-radius: 5px;
+}
+
+.button {
+  display: inline-block;
+  transition: background-color 300ms ease, color 300ms ease;
+  cursor: pointer;
+  border: 10px;
+  border-radius: 10px;
+  padding: 5px 10px;
+  color: #000;
+  background: #fff;
+  text-transform: capitalize;
+}
+
+.button:hover {
+  background: #5a7ddd;
+  border-radius: 10px;
+  padding: 5px 10px;
+  color: #fff;
+  text-align: center;
+  cursor: pointer;
+}
+
+main {
+  margin: 0 auto;
+  padding: var(
+    --gutter
+  ); /* Using the --gutter variable for consistent spacing */
+  max-width: 70rem; /* Increased max-width to accommodate article images */
+  line-height: 1.6em;
+  align-self: center;
+}
+
+main p {
+  margin: 20px auto;
+}
+
+p,
+article,
+aside {
+  margin-bottom: 2rem;
+}
+
+aside {
+  margin: 20px;
+}
+
+footer {
+  text-align: center;
+  padding: 1px;
+  padding-top: 1.5rem;
+  background-color: #333;
+  color: #fff;
+}
+
+.hero {
+  position: relative;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.3),
+    rgba(0, 0, 0, 0.7)
+  );
+  z-index: 1;
+}
+
+.hero img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.hero-text {
+  position: absolute;
+  /* top: 30%;
+  left: 10%; */
+  z-index: 2;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  padding: var(--gutter);
+  width: calc(100% - 2 * var(--gutter)); /* Subtract padding from both sides */
+}
+
+h1 {
+  font-size: 2.5rem;
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  letter-spacing: 5px;
+}
+
+.hero-text p {
+  font-size: 1.5rem;
+  line-height: 1.3;
+  max-width: 60%;
+  font-weight: 30;
+  letter-spacing: 3px;
+}
+
+.hero-text > h1 {
+  font-size: clamp(1.5rem, 10vw + 1rem, 3rem);
+}
+
+.sr-only {
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card {
+  flex: 1 0 100%; /* 1x4 column for mobile */
+  display: flex;
+  flex-direction: column;
+}
+
+.card a {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  object-fit: cover; /* Ensures the image covers the area of the container without being stretched */
+}
+
+.card p {
+  padding: 10px;
+}
+.cards a:hover {
+  background-color: #ccc;
+  transform: scale(1.05);
+}
+
+/* Tablet layout */
+@media (min-width: 768px) {
+  .card {
+    flex: 1 0 50%; /* 2x2 grid for tablet */
+
+    /* Adjust styling for tablet layout */
+  }
+}
+
+/* Laptop layout */
+@media (min-width: 1024px) {
+  .card {
+    flex: 1 0 25%; /* 4x1 row for laptop */
+
+    /* Adjust styling for laptop layout */
+  }
+}
+
+/* For mobile layout */
+.panel {
+  display: flex;
+  flex-direction: column;
+  background-color: #ccc;
+  padding: 20px 40px;
+}
+
+.panel h2 {
+  font-size: 35px;
+  font-weight: 800;
+}
+
+.image-wrapper {
+  order: 1;
+  width: 100%;
+}
+
+/* For tablet/desktop layout */
+@media (min-width: 768px) {
+  .panel {
+    flex-direction: row;
+  }
+
+  .text-wrapper {
+    flex: 1;
+    margin-left: 20px; /* Example gap between image and text */
+  }
+
+  .image-wrapper {
+    flex: 1;
+    max-width: 40%; /* Example ratio, adjust as needed */
+    object-fit: cover; /* Maintain aspect ratio */
+  }
+
+  .panel h2 {
+    margin-top: 0; /* Remove top margin */
+  }
+}
+
+.left {
+  display: flex;
+  flex-direction: row;
+}
+
+.left .text-wrapper {
+  order: 1; /* Text on the left */
+}
+
+.left .image-wrapper {
+  order: 0; /* Image on the right */
+}
