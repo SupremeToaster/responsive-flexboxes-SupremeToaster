@@ -149,7 +149,7 @@ nav ul a:hover {
   border-radius: 10px;
   padding: 5px 10px;
   color: #000;
-  background: #fff;
+  background: #ccc;
   text-transform: capitalize;
 }
 
@@ -160,6 +160,7 @@ nav ul a:hover {
   color: #fff;
   text-align: center;
   cursor: pointer;
+  text-decoration: underline;
 }
 
 main {
@@ -326,7 +327,7 @@ svg {
 .panel {
   display: flex;
   flex-direction: column;
-  background-color: #ccc;
+  /* background-color: #ccc; */
   padding: 20px 40px;
 }
 
